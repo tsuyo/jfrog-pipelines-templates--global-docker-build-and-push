@@ -10,14 +10,14 @@ GitRepo:
     # exclude: 'main'
 
 BuildInfo:
-  name: templates_global_docker_build_and_push
+  name: buildinfo_templates_global_docker_build_and_push
   autoPublishBuildInfo: true
   # TODO: build number
 
 artifactoryIntegration: artifactory
 
 Image:
-  name: templates_global_docker_build_and_push
+  name: image_templates_global_docker_build_and_push
   sourceRepository: docker
   # autoPull: false
 
