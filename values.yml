@@ -12,7 +12,7 @@ GitRepo:
 BuildInfo:
   name: buildinfo_templates_global_docker_build_and_push
   autoPublishBuildInfo: true
-  # TODO: build number
+  buildNumber: ${run_number}
 
 artifactoryIntegration: artifactory
 
