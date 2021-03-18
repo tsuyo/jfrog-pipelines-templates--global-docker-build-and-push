@@ -1,0 +1,33 @@
+Pipeline:
+  name: templates_global_docker_build_and_push
+
+GitRepo:
+  name: github__tsuyo__jfrog_pipelines_templates__global_docker_build_and_push
+  gitProvider: tsuyo_github
+  path: tsuyo/jfrog-pipelines-templates--global-docker-build-and-push
+  branches:
+    include: 'main'
+    # exclude: 'main'
+
+BuildInfo:
+  name: templates_global_docker_build_and_push
+  autoPublishBuildInfo: true
+  # TODO: build number
+
+artifactoryIntegration: artifactory
+
+Image:
+  name: templates_global_docker_build_and_push
+  sourceRepository: docker
+  # autoPull: false
+
+DockerBuild:
+  name: docker_build
+  dockerImageName: platform.tsuyo.org/docker/templates-global-docker-build-and-push
+  dockerFileName: Dockerfile
+  dockerFileLocation: '.'
+  dockerImageTag: ${run_number}
+
+DockerPush:
+  name: docker_push
+  targetRepository: docker
