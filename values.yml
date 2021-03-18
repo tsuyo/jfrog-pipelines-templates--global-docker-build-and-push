@@ -30,4 +30,5 @@ DockerBuild:
 
 DockerPush:
   name: docker_push
-  targetRepository: docker
+  # must be a local repo
+  targetRepository: docker-local
